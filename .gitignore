@@ -1,0 +1,22 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python bytecode
+__pycache__/
+
+# Ignore OS files
+.DS_Store
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore .env file for sensitive information
+.env
+
+# Ignore my setup and project notes
+setup_notes.txt
+project_notes.txt
