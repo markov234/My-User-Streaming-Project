@@ -105,10 +105,11 @@ def run_spark_consumer():
     #     .option("subscribe", topic) \
     #     .load()
     
-    print(stream_df)
     # DataFrame[key: binary, value: binary, topic: string, partition: int, 
     # offset: bigint, timestamp: timestamp, timestampType: int]
+    print(stream_df)
 
+    # Use a variant of this code when you want to see the data in the console.
     # value_df is just a transformed dataframe, not a streaming query,
     # so should be helpful if needing to debug. And does not need .awaitTermination().
     # Can be used to see what the data looks like.
@@ -123,6 +124,7 @@ def run_spark_consumer():
     #     .format("console") \
     #     .start()
     # value_df.awaitTermination(30) # seconds.
+
     value_df = stream_df.select(col("value").cast("string")) \
         .withColumn("data", from_json(col("value"), schema)) \
         .select("data.*") \
