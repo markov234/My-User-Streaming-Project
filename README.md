@@ -8,8 +8,9 @@ This project uses Kafka and Spark to stream and process data from the Random Use
 
 ## How to Run
 1. Activate the virtual environment.
-2. Run the producer and consumer scripts.
+2. Run the Kafka and PostgreSQL servers.
+3. Run the producer and consumer scripts.
 
 ## Requirements
-- Python 3.13
+- Python 3.11 (Some packages may not be compatible with other versions)
 - Kafka, Spark, PostgreSQL
